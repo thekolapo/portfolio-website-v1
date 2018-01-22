@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kolapo Oni - Creative Developer</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">  
+  <link rel="shortcut icon" href="images/favicon.png">
+  <!-- Custom Fonts -->
+  <!-- <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="js/TweenMax.min.js"></script>
+</head>
+<body>
+  <script src="js/main.js"></script>
+  <div id="menu-icon" onclick="menuIconClick(this)">
+    <div id="bar1"></div>
+    <div id="bar2"></div>
+    <div id="bar3"></div>
+  </div>
+  <div id="myNav" class="overlay">
+    <div class="overlay-content">
+      <a href="#/home" onclick="goToSection(0)">Home</a>
+      <br>
+      <a href="#/work" onclick="goToSection(1)">Work</a>
+      <br>
+      <a href="#/about" onclick="goToSection(7)">About</a>
+    </div>
+  </div>
+  <div id="project-scroll-count">
+    <span id="project-text-counter">1|</span>
+    <span class="subscript-text">6</span>
+    <br>
+    <span id="projects-text">projects</span>
+  </div>
+  <section>
+    <div class="container">
+      <div id="home-row" class="row">
+        <div class="col-sm-10 col-sm-offset-1 big-name">Kolapo Oni</div>
+        <div class="square-outline"></div>
+        <div class="col-sm-10 col-sm-offset-1 about-small">I'm a Creative Developer based in Lagos, Nigeria.</div>
+        <div class="col-sm-10 col-sm-offset-1 small-scroll-text">See my work</div>
+        <div class="circle-purple"></div>
+        <div class="circle-light"></div>
+        <div class="circle-faded-blue"></div>
+        <div class="triangle-purple"></div>
+        <div class="triangle-apricot"></div>
+        <div class="triangle-light"></div>
+        <div class="square"></div>
+      </div>
+  
+      <div id="about-section" class="row">
+          <div class="col-md-11 col-md-offset-1 about-section-title">Hi, I'm Kolapo Oni.</div>
+          <div id="about-section-view-work" class="col-md-11 col-md-offset-1">See my work on desktop</div>
+          <div class="col-md-10 col-md-offset-1 about-section-content">I'm a 22 year old Creative Developer based in Lagos, Nigeria.🤘🏾 <br>I mostly design beautiful experiences with <span class="color-burlywood">Unity</span> (<span class="color-burlywood">Games</span>, <span class="color-burlywood">Virtual</span> and <span class="color-burlywood">Augmented Reality</span> experiences). I solely designed a minimalist 2D game titled <a href="http://fading-game.com/" target="_blank" class="color-burlywood">Fading</a>. ✌🏾</div>
+          <div class="col-md-10 col-md-offset-1 about-section-content small-top-margin">I have a good handle on Frontend Development using HTML, CSS and Javascript (with a good understanding of <span class="color-burlywood">Pixi.js</span>). I can also develop natively for <span class="color-burlywood">Android</span> using <span class="color-burlywood">Java</span> and the Android SDK.</div> 
+          <div class="col-md-11 col-md-offset-1 about-section-content small-top-margin">I used to do some literary <a href="https://thekolapo.wordpress.com/" target="_blank" class="color-burlywood">writing</a> (poetry I think) and I'm enthusiastic about a few things like <span class="color-burlywood">games</span> (love Monument Valley and Prune), <span class="color-burlywood">design</span>, <span class="color-burlywood">creative coding</span>, <span class="color-burlywood">music</span> and <span class="color-burlywood">photography</span>. I take nice shots sometimes on <a href="https://vsco.co/thekolapo" target="_blank"  class="color-burlywood">VSCO</a>. 👌🏾</div> 
+          <div class="col-md-11 col-md-offset-1 about-section-content small-top-margin">If you have an interesting project, an idea or just want to make contact, shoot an email to <a href="mailto:onikolapo@gmail.com">onikolapo@gmail.com</a>. I would love to hear from you.</div> 
+          <div class="col-md-11 col-md-offset-1 about-section-content hi-emoji">👋🏾</div>
+          <div class="col-md-11 col-md-offset-1 about-section-content contact-info"><a href="https://twitter.com/kolapo_" target="_blank"  class="color-burlywood">Twitter.</a> &nbsp;<a href="https://github.com/thekolapo" target="_blank"  class="color-burlywood">Github.</a> &nbsp;<a href="https://vsco.co/thekolapo" target="_blank"  class="color-burlywood">VSCO.</a> &nbsp;<a href="https://instagram.com/thekolapo" target="_blank"  class="color-burlywood">Instagram.</a></div>
+      </div>
+
+      <div id="first-project" class="row">
+         <div class="col-sm-6 col-sm-offset-6">
+           <div class="row project-number">01.</div>
+           <div class="row project-title">Fading</div>
+           <div class="row project-one-desc">Fading is a minimalist 2D game where you traverse the troubled mind of a man. It's a game I solely designed using Unity. ✌🏾</div>
+           <a href="http://fading-game.com/" target="_blank"><button class="button">view game</button></a>
+         </div>
+         <div class="circle-red-big"></div>
+         <div class="circle-purple shape-small"></div>
+         <div class="circle-green"></div>
+         <div class="circle-blue"></div>
+         <div class="circle-orange"></div>
+         <div class="circle-chartreuse"></div>
+      </div>
+
+      <div id="second-project" class="row">
+          <div class="col-sm-6 col-sm-offset-6">
+            <div class="row project-number color-blue">02.</div>
+            <div class="row project-title color-blue">Blue Bird Ar</div>
+            <div class="row project-desc">Blue Bird AR is a marker based augmented reality experiment where a little blue bird flies around popping balloons. I deisgned this experience with Unity and Vuforia.</div>
+            <a href="https://github.com/thekolapo/ar-bluebird" target="_blank"><button class="button button-2">view on github</button></a>
+          </div>
+          <div class="bird-image"></div>
+          <div class="hexagon-red"></div>
+          <div class="hexagon-purple"></div>
+          <div class="hexagon-orange"></div>
+          <div class="hexagon-green"></div>
+          <div class="hexagon-yellow"></div>
+      </div>
+
+      <div id="third-project" class="row">
+          <div class="col-sm-6 col-sm-offset-6">
+            <div class="row project-number color-burlywood">03.</div>
+            <div class="row project-title color-burlywood">Pong</div>
+            <div class="row project-desc color-white">Pong is a wee webgl game I developed with Unity to recreate the old pong arcade experience, but with better design.</div>
+            <a href="http://thekolapo.com/pong.github.io/" target="_blank"><button class="button button-purple">launch website</button></a>
+          </div>
+          <div class="img-tennis-bat"></div>
+          <div class="circle-burly-wood circle-big-top"></div>
+          <div class="circle-burly-wood circle-medium-bottom"></div>
+          <div class="circle-burly-wood circle-small-bottom"></div>
+          <div class="circle-burly-wood circle-small-top"></div>
+          <div class="circle-burly-wood circle-medium-top-right"></div>
+          <div class="circle-burly-wood circle-small-bottom-center"></div>
+      </div>
+
+      <div id="fourth-project" class="row">
+        <div class="col-sm-6 col-sm-offset-6">
+          <div class="row project-number color-burlywood">04.</div>
+          <div class="row project-title color-burlywood">Interc Network</div>
+          <div class="row project-desc color-white">It's a  native android app I developed for an ISP while working at Maliyo as a software developer in 2016. It enables InterC Network users pay and monitor data usage directly from the mobile app.</div>
+          <a href="https://play.google.com/store/apps/details?id=com.maliyolabs.interc&hl=en" target="_blank"><button class="button button-blue">view app</button></a>
+        </div>
+        <div class="img-wireless-internet"></div>
+        <div class="triangle-burly-wood dimen-big"></div>
+        <div class="triangle-burly-wood dimen-medium position-left"></div>
+        <div class="triangle-burly-wood dimen-small position-bottom-left"></div>
+        <div class="triangle-burly-wood dimen-small position-center-bottom"></div>
+        <div class="triangle-burly-wood dimen-small position-center-top"></div>
+        <div class="triangle-burly-wood dimen-small position-bottom-right"></div>
+      </div>
+
+      <div id="fifth-project" class="row">
+          <div class="col-sm-6 col-sm-offset-6">
+            <div class="row project-number color-burlywood">05.</div>
+            <div class="row project-title color-burlywood">Dancing man AR</div>
+            <div class="row project-desc color-white">It is an augmented reality experiment I developed with Unity and ARKit.</div>
+            <a href="https://www.youtube.com/watch?v=9t2TXkWsrKw" target="_blank"><<button class="button button-purple">view demo</button></a>
+          </div>
+          <div class="img-google-cardboard"></div>
+          <div class="img-octagon"></div>
+          <div class="img-octagon octagon-medium-top"></div>
+          <div class="img-octagon octagon-medium-bottom-right"></div>
+          <div class="img-octagon octagon-small-bottom-center"></div>
+          <div class="img-octagon octagon-medium-top-right"></div>
+          <div class="img-octagon octagon-small-top-center"></div>
+      </div>
+
+      <div id="sixth-project" class="row">
+          <div class="col-sm-6 col-sm-offset-6">
+            <div class="row project-number color-darkslateblue">06.</div>
+            <div class="row project-title color-darkslateblue">Left or right</div>
+            <div class="row project-desc color-darkgray">It's a simple android game based on swipe gestures. It was a fun project I developed in a day with Unity.</div>
+            <a href="https://play.google.com/store/apps/details?id=com.KolapoOni.LeftOrRight&hl=en" target="_blank"><button class="button button-darkslateblue">view game</button></a>
+          </div>
+          <div class="triangle-lightsteelblue triangle-lightsteelblue-big"></div>
+          <div class="triangle-lightsteelblue triangle-lightsteelblue-medium-right"></div>
+          <div class="triangle-lightsteelblue triangle-lightsteelblue-medium-left"></div>
+          <div class="triangle-lightsteelblue triangle-lightsteelblue-medium-bottom"></div>
+          <div class="triangle-lightsteelblue triangle-lightsteelblue-small-bottom"></div>
+          <div class="triangle-lightsteelblue triangle-lightsteelblue-small-bottom-right"></div>
+          <div class="triangle-lightsteelblue triangle-lightsteelblue-small-center-top"></div>
+      </div>
+      
+    </div>
+  </section>
+  <a id="scroll-arrow" href="#/work" class="scroll-down" onclick="scrollToFirstProject()"></span>
+</body>
+</html>
