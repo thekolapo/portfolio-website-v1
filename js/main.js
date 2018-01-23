@@ -11,7 +11,7 @@ var scrollTextCounterColors = ['#ed483f', '#6a9ff9', '#eede8e', '#eede8e', '#eed
 var menuIcon = null;
 var cantscroll = false;
 
-window.addEventListener("mousewheel", function(e){
+window.addEventListener("wheel", function(e){
     if(tweening || overlayHeight != '0%' || scrollId == 7 || cantscroll){
         return;
     }

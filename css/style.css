@@ -23,6 +23,11 @@ font-face {
     src: url(/fonts/AdventPro-Thin.ttf);
 }
 
+font-face {
+    font-family: "SofiaProLight";
+    src: url(/fonts/SofiaProLight.ttf);
+}
+
 body{
     overflow-x: hidden;
     background:#051830;
@@ -275,7 +280,7 @@ body{
 }
 
 .about-section-content{
-    font-family: "Playfair Display";
+    font-family: "SofiaProLight";
     font-size: 22px;
     color: white;
     letter-spacing: 1px;
@@ -1048,7 +1053,6 @@ body{
     }
     
     .about-section-content{
-        font-family: "Playfair Display";
         font-size: 32px;
         color: white;
         letter-spacing: 1px;
@@ -1098,7 +1102,6 @@ body{
     }
     
     .about-section-content{
-        font-family: "Playfair Display";
         font-size: 32px;
         color: white;
         letter-spacing: 1px;
@@ -1148,7 +1151,6 @@ body{
     }
     
     .about-section-content{
-        font-family: "Playfair Display";
         font-size: 18px;
         color: white;
         letter-spacing: 1px;
@@ -1199,7 +1201,6 @@ body{
     }
     
     .about-section-content{
-        font-family: "Playfair Display";
         font-size: 18px;
         color: white;
         letter-spacing: 1px;
@@ -1250,7 +1251,6 @@ body{
     }
     
     .about-section-content{
-        font-family: "Playfair Display";
         font-size: 18px;
         color: white;
         letter-spacing: 1px;
@@ -1302,7 +1302,6 @@ body{
     }
     
     #about-section-content{
-        font-family: "Playfair Display";
         font-size: 18px;
         color: white;
         letter-spacing: 1px;
@@ -1353,7 +1352,6 @@ body{
     }
     
     .about-section-content{
-        font-family: "Playfair Display";
         font-size: 18px;
         color: white;
         letter-spacing: 1px;
@@ -1405,7 +1403,6 @@ body{
     }
     
     .about-section-content{
-        font-family: "Playfair Display";
         font-size: 18px;
         color: white;
         letter-spacing: 1px;
@@ -1456,7 +1453,6 @@ body{
     }
     
     .about-section-content{
-        font-family: "Playfair Display";
         font-size: 25px;
         color: white;
         letter-spacing: 1px;
