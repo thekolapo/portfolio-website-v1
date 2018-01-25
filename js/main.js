@@ -11,12 +11,14 @@ var scrollTextCounterColors = ['#ed483f', '#6a9ff9', '#eede8e', '#eede8e', '#eed
 var menuIcon = null;
 var cantscroll = false;
 
+var reqVal = 60;
+
 window.addEventListener("wheel", function(e){
     if(tweening || overlayHeight != '0%' || scrollId == 7 || cantscroll){
         return;
     }
 
-   if(e.wheelDeltaY < -60){
+   if(e.wheelDeltaY < -reqVal){
        scrollId+=1; 
        divToScroll = (scrollId == 7) ? 6 : scrollId-1;
 
@@ -29,7 +31,7 @@ window.addEventListener("wheel", function(e){
        new TweenMax.to(divIds[divToScroll], 0.4, {opacity: '0', onComplete: onTweenComplete});   
 
    }
-   else if(e.wheelDeltaY > 60){
+   else if(e.wheelDeltaY > reqVal){
        if(scrollId == 0){
            return;
        }
@@ -141,6 +143,11 @@ window.onload = function() {
 
         cantscroll = false;
      }
+
+    if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+        reqVal = 2;        
+    }
+    
 };
 
 
