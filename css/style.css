@@ -519,7 +519,7 @@ body{
     background-color:#508be8;
     border-radius: 50%;
     right: -10%;
-    top: 105%;
+    top: 110%;
     opacity: 0.7;
 }
 
@@ -531,7 +531,7 @@ body{
     background-color: orange;
     border-radius: 50%;
     left: -10%;
-    top: 110%;
+    top: 115%;
     opacity: 0.8; 
 }
 
@@ -1025,104 +1025,6 @@ body{
     text-transform: uppercase;
 }
 
-@media only screen and (device-width : 1024px) and (device-height : 1366px) {
-    #about-section{
-        /* display: none; */
-        text-align: left;
-        margin-top: 10%;
-    }
-    
-    .about-section-title{
-        font-family: "Sorren Medium";
-        font-size: 80px;
-        color: #eede8e;
-        letter-spacing: 5px;
-    }
-
-    #about-section-view-work{
-        font-family: "Sorren Medium";
-        font-size: 42px;
-        color: #eede8e;
-        opacity: 0.8;
-        letter-spacing: 4px;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        text-transform: uppercase;
-        display: none;
-    }
-    
-    .about-section-content{
-        font-size: 32px;
-        color: white;
-        letter-spacing: 1px;
-        line-height: 60px;
-    }
-    
-    .small-top-margin{
-        margin-top: 30px;
-    }
-
-    .hi-emoji{
-        margin-top: 60px;
-        font-size: 47px;
-    }
-
-    .contact-info{
-        margin-top: 5px;
-        margin-bottom: 50px;
-        font-size: 30px;
-    }  
-}
-
-@media only screen and (device-width : 1024px) and (device-height : 768px) {
-    #about-section{
-        /* display: none; */
-        text-align: left;
-        margin-top: 10%;
-    }
-    
-    .about-section-title{
-        font-family: "Sorren Medium";
-        font-size: 80px;
-        color: #eede8e;
-        letter-spacing: 5px;
-    }
-
-    #about-section-view-work{
-        font-family: "Sorren Medium";
-        font-size: 42px;
-        color: #eede8e;
-        opacity: 0.8;
-        letter-spacing: 4px;
-        margin-top: 5%;
-        margin-bottom: 5%;
-        text-transform: uppercase;
-        display: none;
-    }
-    
-    .about-section-content{
-        font-size: 32px;
-        color: white;
-        letter-spacing: 1px;
-        line-height: 60px;
-    }
-    
-    .small-top-margin{
-        margin-top: 30px;
-    }
-
-    .hi-emoji{
-        margin-top: 60px;
-        font-size: 47px;
-    }
-
-    .contact-info{
-        margin-top: 5px;
-        margin-bottom: 50px;
-        font-size: 30px;
-    }  
-}
-
 @media screen and (max-width: 812px){
     #about-section{
         /* display: none; */
@@ -1423,6 +1325,138 @@ body{
         font-size: 15px;
     }
 
+}
+
+@media screen and (min-width : 1920px){
+    #first-project, #second-project, #third-project, #fourth-project, #fifth-project, #sixth-project{
+        margin-top: 22%;
+    }
+
+    #home-row{
+        margin-top: 7%;
+    }
+
+    .circle-red-big, .img-tennis-bat, .bird-image, .img-wireless-internet, .triangle-lightsteelblue-big{
+        top: 49%;
+    }
+
+    .img-google-cardboard{
+        top: 59%;
+    }  
+
+}
+
+@media only screen and (device-width : 1024px) and (device-height : 1366px) {
+    #first-project, #second-project, #third-project, #fourth-project, #fifth-project, #sixth-project{
+        margin-top: 32%;
+    }
+
+    #home-row{
+        margin-top: 15%;
+    }
+
+    .circle-red-big, .img-tennis-bat, .bird-image, .img-wireless-internet, .triangle-lightsteelblue-big{
+        top: 59%;
+    }
+
+    .img-google-cardboard{
+        top: 69%;
+    } 
+
+    #about-section{
+        text-align: left;
+        margin-top: 10%;
+    }
+    
+    .about-section-title{
+        font-family: "Sorren Medium";
+        font-size: 80px;
+        color: #eede8e;
+        letter-spacing: 5px;
+    }
+
+    #about-section-view-work{
+        font-family: "Sorren Medium";
+        font-size: 42px;
+        color: #eede8e;
+        opacity: 0.8;
+        letter-spacing: 4px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        text-transform: uppercase;
+        display: none;
+    }
+    
+    .about-section-content{
+        font-size: 32px;
+        color: white;
+        letter-spacing: 1px;
+        line-height: 60px;
+    }
+    
+    .small-top-margin{
+        margin-top: 30px;
+    }
+
+    .hi-emoji{
+        margin-top: 60px;
+        font-size: 47px;
+    }
+
+    .contact-info{
+        margin-top: 5px;
+        margin-bottom: 50px;
+        font-size: 30px;
+    }  
+}
+
+@media only screen and (device-width : 1024px) and (device-height : 768px) {
+    #about-section{
+        /* display: none; */
+        text-align: left;
+        margin-top: 10%;
+    }
+    
+    .about-section-title{
+        font-family: "Sorren Medium";
+        font-size: 80px;
+        color: #eede8e;
+        letter-spacing: 5px;
+    }
+
+    #about-section-view-work{
+        font-family: "Sorren Medium";
+        font-size: 42px;
+        color: #eede8e;
+        opacity: 0.8;
+        letter-spacing: 4px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        text-transform: uppercase;
+        display: none;
+    }
+    
+    .about-section-content{
+        font-size: 32px;
+        color: white;
+        letter-spacing: 1px;
+        line-height: 60px;
+    }
+    
+    .small-top-margin{
+        margin-top: 30px;
+    }
+
+    .hi-emoji{
+        margin-top: 60px;
+        font-size: 47px;
+    }
+
+    .contact-info{
+        margin-top: 5px;
+        margin-bottom: 50px;
+        font-size: 30px;
+    }  
 }
 
 @media only screen and (device-width : 1024px) and (device-height : 768px) {
