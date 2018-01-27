@@ -12,9 +12,10 @@ var menuIcon = null;
 var cantscroll = false;
 
 var reqVal = 60;
+var loaderAnimIsOn = true;
 
 window.addEventListener("wheel", function(e){
-    if(tweening || overlayHeight != '0%' || scrollId == 7 ||  $(window).width() < 1024){
+    if(tweening || overlayHeight != '0%' || scrollId == 7 ||  $(window).width() < 1024 || loaderAnimIsOn){
         return;
     }
 
@@ -132,6 +133,11 @@ function toggleNav() {
 }
 
 window.onload = function() {
+    setTimeout(showContent, 3000); 
+};
+
+function showContent(){
+    new TweenMax.to("#loader-overlay", 1, {opacity: '0', onComplete: turnOffLoaderDisplay}); 
     if ($(window).width() < 1024) {
         document.getElementById("home-row").style.display= 'none';
         document.getElementById("about-section").style.display= 'block';
@@ -152,9 +158,13 @@ window.onload = function() {
     if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
         reqVal = 2;        
     }
-    
-};
 
+    loaderAnimIsOn = false;
+}
+
+function turnOffLoaderDisplay() {
+    document.getElementById("loader-overlay").style.display = 'none';
+}
 
 $(window).resize(function() {
     if ($(window).width() < 1024) {
