@@ -83,8 +83,12 @@ var onTweenComplete = function () {
         document.getElementById('projects-text').style.color = '#444986';
     }
 
-    tweening = false;
+    setTimeout(setTweeningToFalse, 700);
 };
+
+function setTweeningToFalse(){
+    tweening = false;
+}
 
 function scrollToFirstProject(){
     scrollId = 1;
