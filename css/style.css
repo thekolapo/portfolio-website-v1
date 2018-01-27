@@ -688,7 +688,7 @@ body{
     background-size:contain;
     transform: scaleX(-1);
     left: 0%;
-    top: 105%;
+    top: 115%;
     transform: rotate(-25deg);
     opacity: 0.8;
     z-index: -2;
@@ -718,7 +718,7 @@ body{
     background-size:contain;
     transform: scaleX(-1);
     right: 10%;
-    top: 105%;
+    top: 120%;
     transform: rotate(-25deg);
     opacity: 0.8;
     z-index: -2;
@@ -1326,6 +1326,8 @@ body{
     }
 
 }
+
+/* 1440 goes here */
 
 @media screen and (min-width : 1920px){
     #first-project, #second-project, #third-project, #fourth-project, #fifth-project, #sixth-project{

@@ -14,7 +14,7 @@ var cantscroll = false;
 var reqVal = 60;
 
 window.addEventListener("wheel", function(e){
-    if(tweening || overlayHeight != '0%' || scrollId == 7 || cantscroll){
+    if(tweening || overlayHeight != '0%' || scrollId == 7 ||  $(window).width() < 1024){
         return;
     }
 
@@ -136,6 +136,7 @@ window.onload = function() {
         document.getElementById("scroll-arrow").style.display = 'none';
 
         cantscroll = true;
+        document.body.style.backgroundColor = (scrollId == 0)? projectBackgroundColors[6] : projectBackgroundColors[scrollId - 1];
      }
      else {
         document.getElementById("about-section-view-work").style.display= 'none';
@@ -155,16 +156,18 @@ $(window).resize(function() {
     if ($(window).width() < 1024) {
         document.getElementById("about-section-view-work").style.display= 'block';
         document.getElementById("menu-icon").style.display= 'none';
+        document.body.style.backgroundColor = projectBackgroundColors[6];
 
         if(scrollId == 7){
             return;
         }
-        
-        cantScroll= true;
+
+        cantScroll = true;
         document.getElementById(divIds_[scrollId]).style.display = 'none';
+        document.getElementById("about-section").style.opacity = 1;
         document.getElementById("about-section").style.display = 'block';
         document.getElementById("scroll-arrow").style.display = 'none';
-
+        document.getElementById("project-scroll-count").style.display = 'none';
      }
      else {
         document.getElementById("about-section-view-work").style.display= 'none';
@@ -173,10 +176,15 @@ $(window).resize(function() {
         if(scrollId == 7){
             return;
         }
+        else if(scrollId == 0){
+            document.getElementById("scroll-arrow").style.display = 'block';
+        }
 
-        cantScroll= false;
+        cantScroll = false;
         document.getElementById(divIds_[scrollId]).style.display = 'block';
         document.getElementById("about-section").style.display = 'none';
+        document.getElementById("project-scroll-count").style.display = (scrollId == 0)? 'none' : 'block'; 
+        document.body.style.backgroundColor = (scrollId == 0)? '#051830' : projectBackgroundColors[scrollId - 1];
      }
     
 });
