@@ -260,6 +260,12 @@ body{
     padding-left: 10%;
 }
 
+#seventh-project{
+    display: none;
+    margin-top: 15%;
+    padding-left: 10%;
+}
+
 #home-row{
     /* display: none; */
 }
@@ -736,6 +742,20 @@ body{
     z-index: -2;
 }
 
+.img-oculus{
+    position: absolute;
+    width: 320px;
+	height: 320px;
+    display: block;
+    background-image: url('/images/oculus.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+    left: 10%;
+    top: 45%;
+    opacity: 0.6;
+    z-index: -2;
+}
+
 .img-google-cardboard{
     position: absolute;
     width: 320px;
@@ -979,13 +999,13 @@ body{
 
 .position-bottom-left{
     left: 0%;
-    top: 130%;
+    top: 125%;
 }
 
 .position-center-bottom{
     transform: rotate(35deg);
     left: 60%;
-    top: 130%;
+    top: 125%;
     border-top: 27px solid transparent;
 	border-left: 54px solid #eede8e;
     border-bottom: 27px solid transparent;
@@ -1002,7 +1022,7 @@ body{
 
 .position-bottom-right{
     right: 0%;
-    top: 130%;
+    top: 125%;
     transform: rotate(77deg);
 }
 
@@ -1378,7 +1398,7 @@ figure div:nth-child(8):after{animation-delay:-4;}
 /* 1440 goes here */
 
 @media screen and (min-width : 1920px){
-    #first-project, #second-project, #third-project, #fourth-project, #fifth-project, #sixth-project{
+    #first-project, #second-project, #third-project, #fourth-project, #fifth-project, #sixth-project, #seventh-project{
         margin-top: 22%;
     }
 
@@ -1397,7 +1417,7 @@ figure div:nth-child(8):after{animation-delay:-4;}
 }
 
 @media only screen and (device-width : 1024px) and (device-height : 1366px) {
-    #first-project, #second-project, #third-project, #fourth-project, #fifth-project, #sixth-project{
+    #first-project, #second-project, #third-project, #fourth-project, #fifth-project, #sixth-project, #seventh-project{
         margin-top: 32%;
     }
 
