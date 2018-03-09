@@ -1414,6 +1414,10 @@ figure div:nth-child(8):after{animation-delay:-4;}
         top: 59%;
     }  
 
+    .img-oculus{
+        top: 50%;
+    }
+
 }
 
 @media only screen and (device-width : 1024px) and (device-height : 1366px) {
