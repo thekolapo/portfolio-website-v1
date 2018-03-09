@@ -146,7 +146,7 @@ function showContent(){
         document.getElementById("scroll-arrow").style.display = 'none';
 
         cantscroll = true;
-        document.body.style.backgroundColor = (scrollId == 0)? projectBackgroundColors[6] : projectBackgroundColors[scrollId - 1];
+        document.body.style.backgroundColor = (scrollId == 0)? projectBackgroundColors[7] : projectBackgroundColors[scrollId - 1];
      }
      else {
         document.getElementById("about-section-view-work").style.display= 'none';
