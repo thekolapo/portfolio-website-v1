@@ -14,7 +14,7 @@ var cantscroll = false;
 var reqVal = 60;
 var loaderAnimIsOn = true;
 
-var atPageBottom = true, atPageTop = true;
+var atPageBottom = false, atPageTop = false;
 
 window.addEventListener("wheel", function(e){
    if(e.wheelDeltaY < -reqVal){
@@ -258,6 +258,13 @@ function showContent(){
 
     if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
         reqVal = 2;        
+    }
+
+    if ($(document).height() > $(window).height()) {
+        atPageBottom = atPageTop = false;
+    }
+    else{
+        atPageBottom = atPageTop = true;
     }
 
     loaderAnimIsOn = false;
