@@ -14,42 +14,65 @@ var cantscroll = false;
 var reqVal = 60;
 var loaderAnimIsOn = true;
 
+var atPageBottom = true, atPageTop = true;
+
 window.addEventListener("wheel", function(e){
-    if(tweening || overlayHeight != '0%' || scrollId == 8 ||  $(window).width() < 1024 || loaderAnimIsOn){
-        return;
-    }
-
    if(e.wheelDeltaY < -reqVal){
-       scrollId+=1; 
-       divToScroll = (scrollId == 8) ? 7 : scrollId-1;
-
-       if(scrollId == 8){
-        scrollId = 1; 
-       }
-
-
-       tweening = true;
-       new TweenMax.to(divIds[divToScroll], 0.4, {opacity: '0', onComplete: onTweenComplete});   
+       scrollToProject("next");
 
    }
    else if(e.wheelDeltaY > reqVal){
-       if(scrollId == 0){
-           return;
-       }
-
-       scrollId -= 1;
-       divToScroll = (scrollId == 0) ? 1 : scrollId+1;
-
-       if(scrollId == 0){
-        scrollId = 7; 
-       }
-
-     tweening = true;
-     new TweenMax.to(divIds[divToScroll], 0.4, {opacity: '0', onComplete: onTweenComplete});   
-
+       scrollToProject("previous");
    }
 
 }, false)
+
+
+$(window).scroll(function() {
+    if($(window).scrollTop() + $(window).height() == $(document).height()) {
+        atPageTop = false;
+        atPageBottom = true;
+
+        scrollToProject("next");
+       
+    }
+    else if ($(window).scrollTop() <= 0) {
+        atPageTop = true;
+        atPageBottom = false;
+
+        scrollToProject("previous");
+          
+    }
+    else{
+        atPageBottom = atPageTop = false;
+    }
+
+ });
+
+
+$(document).keydown(function(e) {
+    switch(e.which) {
+        case 40: // down arrow
+            if(!atPageBottom){
+                return;
+            }
+
+            scrollToProject("next");
+        break;
+
+        case 38: // up arrow
+            if(!atPageTop){
+                return;
+            }
+
+            scrollToProject("previous");
+        break;
+
+        default: 
+            return; 
+    }
+    e.preventDefault(); // prevent the default action (scroll / move caret)
+});
 
 var onTweenComplete = function () {
     document.getElementById(divIds_[divToScroll]).style.display = 'none';
@@ -86,6 +109,40 @@ var onTweenComplete = function () {
 
     setTimeout(setTweeningToFalse, 700);
 };
+
+function scrollToProject(which){
+    if(tweening || overlayHeight != '0%' || scrollId == 8 ||  $(window).width() < 1024 || loaderAnimIsOn){
+        return;
+    }
+
+    if(which == "next"){
+        scrollId+=1; 
+        divToScroll = (scrollId == 8) ? 7 : scrollId-1;
+
+        if(scrollId == 8){
+            scrollId = 1; 
+        }
+
+
+        tweening = true;
+        new TweenMax.to(divIds[divToScroll], 0.4, {opacity: '0', onComplete: onTweenComplete}); 
+    }
+    else{
+        if(scrollId == 0){
+            return;
+        }
+ 
+        scrollId -= 1;
+        divToScroll = (scrollId == 0) ? 1 : scrollId+1;
+ 
+        if(scrollId == 0){
+            scrollId = 7; 
+        }
+ 
+        tweening = true;
+        new TweenMax.to(divIds[divToScroll], 0.4, {opacity: '0', onComplete: onTweenComplete});  
+    }
+}
 
 function setTweeningToFalse(){
     tweening = false;
@@ -136,36 +193,6 @@ window.onload = function() {
     setTimeout(showContent, 3000); 
 };
 
-function showContent(){
-    new TweenMax.to("#loader-overlay", 1, {opacity: '0', onComplete: turnOffLoaderDisplay}); 
-    if ($(window).width() < 1024) {
-        document.getElementById("home-row").style.display= 'none';
-        document.getElementById("about-section").style.display= 'block';
-        document.getElementById("about-section-view-work").style.display= 'block';
-        document.getElementById("menu-icon").style.display= 'none';
-        document.getElementById("scroll-arrow").style.display = 'none';
-
-        cantscroll = true;
-        document.body.style.backgroundColor = (scrollId == 0)? projectBackgroundColors[7] : projectBackgroundColors[scrollId - 1];
-     }
-     else {
-        document.getElementById("about-section-view-work").style.display= 'none';
-        document.getElementById("menu-icon").style.display= 'block';
-
-        cantscroll = false;
-     }
-
-    if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
-        reqVal = 2;        
-    }
-
-    loaderAnimIsOn = false;
-}
-
-function turnOffLoaderDisplay() {
-    document.getElementById("loader-overlay").style.display = 'none';
-}
-
 $(window).resize(function() {
     if ($(window).width() < 1024) {
         document.getElementById("about-section-view-work").style.display= 'block';
@@ -200,5 +227,42 @@ $(window).resize(function() {
         document.getElementById("project-scroll-count").style.display = (scrollId == 0)? 'none' : 'block'; 
         document.body.style.backgroundColor = (scrollId == 0)? '#051830' : projectBackgroundColors[scrollId - 1];
      }
+
+    if ($(document).height() > $(window).height()) {
+        atPageBottom = atPageTop = false;
+    }
+    else{
+        atPageBottom = atPageTop = true;
+    }
     
 });
+
+function showContent(){
+    new TweenMax.to("#loader-overlay", 1, {opacity: '0', onComplete: turnOffLoaderDisplay}); 
+    if ($(window).width() < 1024) {
+        document.getElementById("home-row").style.display= 'none';
+        document.getElementById("about-section").style.display= 'block';
+        document.getElementById("about-section-view-work").style.display= 'block';
+        document.getElementById("menu-icon").style.display= 'none';
+        document.getElementById("scroll-arrow").style.display = 'none';
+
+        cantscroll = true;
+        document.body.style.backgroundColor = (scrollId == 0)? projectBackgroundColors[7] : projectBackgroundColors[scrollId - 1];
+     }
+     else {
+        document.getElementById("about-section-view-work").style.display= 'none';
+        document.getElementById("menu-icon").style.display= 'block';
+
+        cantscroll = false;
+     }
+
+    if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+        reqVal = 2;        
+    }
+
+    loaderAnimIsOn = false;
+}
+
+function turnOffLoaderDisplay() {
+    document.getElementById("loader-overlay").style.display = 'none';
+}
