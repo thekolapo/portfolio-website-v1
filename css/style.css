@@ -43,126 +43,171 @@ body{
 }
 
 .text-content-alt-color {
-    color: #5a5fa3 !important; }
-    .text-content-alt-color a {
-      color: #5a5fa3 !important; }
+    color: #5a5fa3 !important; 
+}
+
+.text-content-alt-color a {
+    color: #5a5fa3 !important; 
+}
   
-  .text-content {
+.text-content {
     position: absolute;
     font-family: "Sorren Medium";
     color: white;
     bottom: 20%;
     left: 9%;
-    transition: color 0.6s; }
-    .text-content .name {
-      font-size: 105px;
-      letter-spacing: 9px; }
-    .text-content .about {
-      font-size: 40px;
-      letter-spacing: 5px; }
-    .text-content .view-work {
-      font-size: 26px;
-      letter-spacing: 6px;
-      margin-top: 50px;
-      text-decoration: underline;
-      cursor: pointer;
-      float: left; }
-    .text-content .action-button {
-      color: #f8e14d;
-      margin-top: 30px;
-      font-size: 25px;
-      text-transform: uppercase;
-      height: 30px;
-      line-height: 20px;
-      letter-spacing: 6px; }
-      .text-content .action-button a {
-        color: white;
-        padding: 0.7em calc(0.7em * 1.2);
-        display: inline-block;
-        border: 3px solid transparent;
-        position: relative;
-        cursor: pointer;
-        text-decoration: none;
-        margin-left: -20px;
-        transition: 0.25s; }
-        .text-content .action-button a .text {
-          transform: translate3d(0, 0.7em, 0);
-          display: block;
-          transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s; }
-        .text-content .action-button a:after {
-          position: absolute;
-          content: '';
-          bottom: -3px;
-          left: calc(0.7em * 1.2);
-          right: calc(0.7em * 1.2);
-          height: 3px;
-          background: #f8e14d;
-          z-index: -1;
-          transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
-          transform-origin: left; }
-      .text-content .action-button .line {
-        position: absolute;
-        background: #f8e14d; }
-        .text-content .action-button .line.-right, .text-content .action-button .line.-left {
-          width: 3px;
-          bottom: -3px;
-          top: -3px;
-          transform: scale3d(1, 0, 1); }
-        .text-content .action-button .line.-top, .text-content .action-button .line.-bottom {
-          height: 3px;
-          left: -3px;
-          right: -3px;
-          transform: scale3d(0, 1, 1); }
-        .text-content .action-button .line.-right {
-          right: -3px;
-          transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
-          transform-origin: top; }
-        .text-content .action-button .line.-top {
-          top: -3px;
-          transition: transform 0.08s linear 0.43s;
-          transform-origin: left; }
-        .text-content .action-button .line.-left {
-          left: -3px;
-          transition: transform 0.08s linear 0.51s;
-          transform-origin: bottom; }
-        .text-content .action-button .line.-bottom {
-          bottom: -3px;
-          transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
-          transform-origin: right; }
-      .text-content .action-button a:hover,
-      .text-content .action-button a:active {
-        margin-left: 0px;
-        transition: 0.25s; }
-        .text-content .action-button a:hover .text,
-        .text-content .action-button a:active .text {
-          transform: translate3d(0, 0, 0);
-          transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s; }
-        .text-content .action-button a:hover:after,
-        .text-content .action-button a:active:after {
-          transform: scale3d(0, 1, 1);
-          right: -3px;
-          left: -3px;
-          transform-origin: right;
-          transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s; }
-        .text-content .action-button a:hover .line,
-        .text-content .action-button a:active .line {
-          transform: scale3d(1, 1, 1); }
-          .text-content .action-button a:hover .line.-right,
-          .text-content .action-button a:active .line.-right {
-            transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;
-            transform-origin: bottom; }
-          .text-content .action-button a:hover .line.-top,
-          .text-content .action-button a:active .line.-top {
-            transition: transform 0.08s linear 0.4s;
-            transform-origin: right; }
-          .text-content .action-button a:hover .line.-left,
-          .text-content .action-button a:active .line.-left {
-            transition: transform 0.08s linear 0.48s;
-            transform-origin: top; }
-          .text-content .action-button a:hover .line.-bottom,
-          .text-content .action-button a:active .line.-bottom {
-            transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
-            transform-origin: left; }
+    transition: color 0.6s; 
+}
+
+.text-content .name {
+    font-size: 105px;
+    letter-spacing: 9px; 
+}
+
+.text-content .about {
+    font-size: 40px;
+    letter-spacing: 5px; 
+
+}
+.text-content .view-work {
+    font-size: 26px;
+    letter-spacing: 6px;
+    margin-top: 50px;
+    text-decoration: underline;
+    cursor: pointer;
+    float: left; 
+}
+
+.text-content .action-button {
+    color: #f8e14d;
+    margin-top: 30px;
+    font-size: 25px;
+    text-transform: uppercase;
+    height: 30px;
+    line-height: 20px;
+    letter-spacing: 6px; }
+    .text-content .action-button a {
+    color: white;
+    padding: 0.7em calc(0.7em * 1.2);
+    display: inline-block;
+    border: 3px solid transparent;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: -20px;
+    transition: 0.25s; 
+
+}
+.text-content .action-button a .text {
+    transform: translate3d(0, 0.7em, 0);
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s; 
+}
+.text-content .action-button a:after {
+    position: absolute;
+    content: '';
+    bottom: -3px;
+    left: calc(0.7em * 1.2);
+    right: calc(0.7em * 1.2);
+    height: 3px;
+    background: #f8e14d;
+    z-index: -1;
+    transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
+    transform-origin: left; 
+}
+
+.text-content .action-button .line {
+    position: absolute;
+    background: #f8e14d; 
+}
+
+.text-content .action-button .line.-right, .text-content .action-button .line.-left {
+    width: 3px;
+    bottom: -3px;
+    top: -3px;
+    transform: scale3d(1, 0, 1); 
+}
+
+.text-content .action-button .line.-top, .text-content .action-button .line.-bottom {
+    height: 3px;
+    left: -3px;
+    right: -3px;
+    transform: scale3d(0, 1, 1); 
+}
+
+.text-content .action-button .line.-right {
+    right: -3px;
+    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
+    transform-origin: top; 
+}
+
+.text-content .action-button .line.-top {
+    top: -3px;
+    transition: transform 0.08s linear 0.43s;
+    transform-origin: left; 
+}
+
+.text-content .action-button .line.-left {
+    left: -3px;
+    transition: transform 0.08s linear 0.51s;
+    transform-origin: bottom; 
+}
+
+.text-content .action-button .line.-bottom {
+    bottom: -3px;
+    transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
+    transform-origin: right;
+ }
+
+.text-content .action-button a:hover,
+.text-content .action-button a:active {
+margin-left: 0px;
+transition: 0.25s; 
+}
+
+.text-content .action-button a:hover .text,
+.text-content .action-button a:active .text {
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s; 
+}
+
+.text-content .action-button a:hover:after,
+.text-content .action-button a:active:after {
+    transform: scale3d(0, 1, 1);
+    right: -3px;
+    left: -3px;
+    transform-origin: right;
+    transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s; 
+}
+
+.text-content .action-button a:hover .line,
+.text-content .action-button a:active .line {
+    transform: scale3d(1, 1, 1); 
+}
+
+.text-content .action-button a:hover .line.-right,
+.text-content .action-button a:active .line.-right {
+    transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;
+    transform-origin: bottom; 
+}
+
+.text-content .action-button a:hover .line.-top,
+.text-content .action-button a:active .line.-top {
+    transition: transform 0.08s linear 0.4s;
+    transform-origin: right; 
+}
+
+.text-content .action-button a:hover .line.-left,
+.text-content .action-button a:active .line.-left {
+    transition: transform 0.08s linear 0.48s;
+    transform-origin: top; 
+}
+
+.text-content .action-button a:hover .line.-bottom,
+.text-content .action-button a:active .line.-bottom {
+    transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
+    transform-origin: left; 
+}
 
 .circle{
     position: absolute;
