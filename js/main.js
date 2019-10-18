@@ -85,7 +85,7 @@ $(document).keydown(function(e) {
 
 var onTweenComplete = function (section) {
     document.getElementById(divIds_[divToScroll]).style.display = 'none';
-    var newBackgroundColor =  (scrollId == 0)? '#291C51' : projectBackgroundColors[scrollId - 1];
+    var newBackgroundColor =  (scrollId == 0)? homeBgColor : projectBackgroundColors[scrollId - 1];
     new TweenMax.to('body', 0.4, {backgroundColor: newBackgroundColor});
     document.getElementById(divIds_[scrollId]).style.opacity = '0';
     document.getElementById(divIds_[scrollId]).style.display = 'block';
