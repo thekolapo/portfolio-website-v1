@@ -11,10 +11,13 @@ var scrollTextCounterColors = ['#ed483f', '#eede8e', '#6a9ff9', '#eede8e', '#eed
 var menuIcon = null;
 var cantscroll = false;
 
-var reqVal = 60;
+var reqVal = 50;
 var loaderAnimIsOn = true;
 
 var atPageBottom = false, atPageTop = false;
+
+let inHomeSection = true;
+let homeBgColor = "#291C51";
 
 window.addEventListener("wheel", function(e){
    if(e.wheelDeltaY < -reqVal){
@@ -29,6 +32,12 @@ window.addEventListener("wheel", function(e){
 
 
 $(window).scroll(function() {
+    inHomeSection = false;
+
+    if(!inHomeSection) {
+        $('.container').css("position", "relative"); 
+    }
+
     if($(window).scrollTop() + $(window).height() == $(document).height()) {
         atPageTop = false;
         atPageBottom = true;
@@ -74,9 +83,9 @@ $(document).keydown(function(e) {
     e.preventDefault(); // prevent the default action (scroll / move caret)
 });
 
-var onTweenComplete = function () {
+var onTweenComplete = function (section) {
     document.getElementById(divIds_[divToScroll]).style.display = 'none';
-    var newBackgroundColor =  (scrollId == 0)? '#051830' : projectBackgroundColors[scrollId - 1];
+    var newBackgroundColor =  (scrollId == 0)? '#291C51' : projectBackgroundColors[scrollId - 1];
     new TweenMax.to('body', 0.4, {backgroundColor: newBackgroundColor});
     document.getElementById(divIds_[scrollId]).style.opacity = '0';
     document.getElementById(divIds_[scrollId]).style.display = 'block';
@@ -108,6 +117,18 @@ var onTweenComplete = function () {
     }
 
     setTimeout(setTweeningToFalse, 700);
+    
+    if(section == 0) {
+        inHomeSection = true;
+    }
+    inHomeSection = section == 0? true : false;
+
+    if(inHomeSection) {
+        $('.container').css("position", "static"); 
+    }
+    else {
+        $('.container').css("position", "relative"); 
+    }
 };
 
 function scrollToProject(which){
@@ -161,7 +182,7 @@ function changeMenuBarColor(color){
     document.getElementById("bar3").style.backgroundColor = color;
 }
 
-function goToSection(section){
+function goToSection(section) {
     menuIcon.classList.toggle("change");
     toggleNav();
 
@@ -175,7 +196,7 @@ function goToSection(section){
     divToScroll = scrollId
     scrollId = section;
     tweening = true;
-    new TweenMax.to(divIds[divToScroll], 0.4, {opacity: '0', onComplete: onTweenComplete});   
+    new TweenMax.to(divIds[divToScroll], 0.4, {opacity: '0', onComplete: onTweenComplete(section)});   
 }
 
 function menuIconClick(x) {
@@ -225,7 +246,7 @@ $(window).resize(function() {
         document.getElementById(divIds_[scrollId]).style.display = 'block';
         document.getElementById("about-section").style.display = 'none';
         document.getElementById("project-scroll-count").style.display = (scrollId == 0)? 'none' : 'block'; 
-        document.body.style.backgroundColor = (scrollId == 0)? '#051830' : projectBackgroundColors[scrollId - 1];
+        document.body.style.backgroundColor = (scrollId == 0)? homeBgColor : projectBackgroundColors[scrollId - 1];
      }
 
     if ($(document).height() > $(window).height()) {
@@ -235,6 +256,11 @@ $(window).resize(function() {
         atPageBottom = atPageTop = true;
     }
     
+});
+
+$('.circle').mouseover(function() {
+    var target =  parseInt($(this).css('margin-top')) + 20;
+    TweenMax.to(this, 0.1, { ease: Bounce.easeOut, y: target, repeat: 1, yoyo: true, });
 });
 
 function showContent(){
@@ -272,4 +298,24 @@ function showContent(){
 
 function turnOffLoaderDisplay() {
     document.getElementById("loader-overlay").style.display = 'none';
+}
+
+function animateCircle(circle, changeTextToAltColor){
+    $(circle).css("z-index", -100);
+    $(circle).addClass("circle-big");
+
+    if(changeTextToAltColor){
+        $('.text-content').addClass("text-content-alt-color");
+    }
+    else{
+        $('.text-content').removeClass("text-content-alt-color");
+    }
+
+    setTimeout(() => {
+        $('body').css("background-color", $(circle).css('background-color'));
+        $(circle).removeClass("circle-big");
+        $(circle).css("z-index", 0);
+        homeBgColor = $(circle).css('background-color');
+    }, 800);
+
 }

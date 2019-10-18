@@ -22,14 +22,14 @@
   </script>
 </head>
 <body>
-  <div id="loader-overlay">
+  <!-- <div id="loader-overlay">
     <figure>
       <div></div><div></div>
       <div></div><div></div>
       <div></div><div></div>
       <div></div><div></div>
     </figure>
-  </div>
+  </div> -->
   <div id="menu-icon" onclick="menuIconClick(this)">
     <div id="bar1"></div>
     <div id="bar2"></div>
@@ -53,17 +53,34 @@
   <section>
     <div class="container">
       <div id="home-row" class="row">
-        <div class="col-sm-10 col-sm-offset-1 big-name">Kolapo Oni</div>
-        <div class="square-outline"></div>
-        <div class="col-sm-10 col-sm-offset-1 about-small">I'm a Creative Developer based in Lagos, Nigeria.</div>
-        <div class="col-sm-10 col-sm-offset-1 small-scroll-text">View my work</div>
-        <div class="circle-purple"></div>
+        <div>
+          <div id="circle-yellow" class="circle" onclick="animateCircle(this)"></div>
+          <div id="circle-blue" class="circle" onclick="animateCircle(this)"></div>
+          <div id="circle-purple" class="circle" onclick="animateCircle(this)"></div>
+          <div id="circle-pink" class="circle" onclick="animateCircle(this)"></div>
+          <div id="circle-bisque" class="circle" onclick="animateCircle(this, changeTextToAltColor = true)"></div>
+          <div id="circle-light-blue" class="circle" onclick="animateCircle(this, changeTextToAltColor = true)"></div>
+        </div>
+        <div class="text-content">
+          <div class="name">Kolapo Oni</div>
+          <div class="about">I’m an Interactive Designer based in Lagos, Nigeria.</div>
+          <div class="action-button">
+            <a href="#/work" onclick="scrollToFirstProject()">
+              <span class="text">View my work</span>
+              <span class="line -right"></span>
+              <span class="line -top"></span>
+              <span class="line -left"></span>
+              <span class="line -bottom"></span>
+            </a>
+          </div>
+        </div>
+        <!-- <div class="circle-purple"></div>
         <div class="circle-light"></div>
         <div class="circle-faded-blue"></div>
         <div class="triangle-purple"></div>
         <div class="triangle-apricot"></div>
         <div class="triangle-light"></div>
-        <div class="square"></div>
+        <div class="square"></div> -->
       </div>
   
       <div id="about-section" class="row">
@@ -192,7 +209,7 @@
       
     </div>
   </section>
-  <a id="scroll-arrow" href="#/work" class="scroll-down" onclick="scrollToFirstProject()"></span>
+  <a id="scroll-arrow" href="#/work" onclick="scrollToFirstProject()" />
   <script src="js/main.js"></script>
 </body>
 </html>
